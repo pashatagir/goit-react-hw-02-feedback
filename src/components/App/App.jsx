@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container } from './App.styled';
+import { Container, Notification } from './App.styled';
 import Section from 'components/Section';
 import FeedbackOptions from 'components/FeedbackOptions';
 import Statistics from 'components/Statistics';
@@ -39,13 +39,18 @@ class App extends Component {
           />
         </Section>
         <Section title="Statistics">
-          <Statistics
-            good={good}
-            neutral={neutral}
-            bad={bad}
-            total={total}
-            positivePercentage={positive}
-          />
+          {good || neutral || bad ? (
+            <Statistics
+              good={good}
+              neutral={neutral}
+              bad={bad}
+              total={total}
+              positivePercentage={positive}
+            />
+          ) : (
+            <Notification>There is no feedback</Notification>
+          )}
+          ;
         </Section>
       </Container>
     );

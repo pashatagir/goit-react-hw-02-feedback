@@ -10,10 +10,3 @@ export const StatTitle = styled.p`
   font-weight: 400;
   font-size: 24px;
 `;
-
-export const Notification = styled.h3`
-  margin: 0;
-  font-weight: 600;
-  font-size: 28px;
-  color: red;
-`;
