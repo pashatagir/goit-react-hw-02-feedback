@@ -11,8 +11,6 @@ class App extends Component {
     bad: 0,
   };
 
-  options = () => Object.keys(this.state);
-
   handleClick = e => {
     const { value } = e.target;
     this.setState(prevState => ({
@@ -34,7 +32,7 @@ class App extends Component {
       <Container>
         <Section title="Please leave feedback">
           <FeedbackOptions
-            options={this.options()}
+            options={Object.keys(this.state)}
             onLeaveFeedback={this.handleClick}
           />
         </Section>
